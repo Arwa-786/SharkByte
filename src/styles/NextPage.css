@@ -1,0 +1,45 @@
+.next-page-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  color: #ecf0f1;
+}
+
+.next-page-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #ecf0f1;
+  font-weight: 600;
+}
+
+.next-page-description {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #bdc3c7;
+  max-width: 600px;
+  text-align: center;
+}
+
+.back-button {
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  background-color: #34495e;
+  color: #ecf0f1;
+  border: 2px solid #4a5f7a;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #4a5f7a;
+  border-color: #5a6f8a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+

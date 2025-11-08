@@ -1,0 +1,225 @@
+.genre-selection-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #ff69b4 0%, #ff8cc8 25%, #f4c2a1 50%, #87ceeb 75%, #4da6ff 100%);
+  color: #ecf0f1;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  position: relative;
+  overflow: hidden;
+}
+
+.genre-selection-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255, 255, 255, 0.05) 2px, rgba(255, 255, 255, 0.05) 4px),
+    repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(255, 255, 255, 0.05) 2px, rgba(255, 255, 255, 0.05) 4px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.genre-selection-container > * {
+  position: relative;
+  z-index: 1;
+}
+
+.genre-selection-title {
+  font-size: 3.5rem;
+  margin-bottom: 0.5rem;
+  color: #00aaff;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  text-shadow: 
+    0 0 10px #00aaff,
+    0 0 20px #00aaff,
+    0 0 30px #00aaff,
+    2px 2px 0px #0066aa,
+    4px 4px 0px #004488;
+  font-family: 'Courier New', monospace;
+  image-rendering: pixelated;
+  animation: pixelGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes pixelGlow {
+  from {
+    text-shadow: 
+      0 0 10px #00aaff,
+      0 0 20px #00aaff,
+      2px 2px 0px #0066aa,
+      4px 4px 0px #004488;
+  }
+  to {
+    text-shadow: 
+      0 0 15px #00aaff,
+      0 0 25px #00aaff,
+      0 0 35px #00aaff,
+      2px 2px 0px #0066aa,
+      4px 4px 0px #004488;
+  }
+}
+
+.genre-selection-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+  color: #00aaff;
+  text-shadow: 0 0 5px #00aaff;
+  font-family: 'Courier New', monospace;
+  letter-spacing: 2px;
+}
+
+.genre-buttons-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: 2rem;
+}
+
+.genre-button {
+  padding: 1.2rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  background-color: #1a1a2e;
+  color: #00aaff;
+  border: 3px solid #00aaff;
+  border-radius: 0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'Courier New', monospace;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 
+    0 0 10px rgba(0, 170, 255, 0.3),
+    inset 0 0 10px rgba(0, 170, 255, 0.1);
+  image-rendering: pixelated;
+  position: relative;
+}
+
+.genre-button:hover {
+  background-color: #00aaff;
+  color: #0a0a0a;
+  box-shadow: 
+    0 0 20px rgba(0, 170, 255, 0.8),
+    inset 0 0 20px rgba(0, 170, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.genre-button.selected {
+  background-color: #00aaff;
+  color: #0a0a0a;
+  box-shadow: 
+    0 0 25px rgba(0, 170, 255, 1),
+    inset 0 0 25px rgba(0, 170, 255, 0.4);
+  animation: pixelPulse 1s ease-in-out infinite;
+}
+
+@keyframes pixelPulse {
+  0%, 100% {
+    box-shadow: 
+      0 0 25px rgba(0, 170, 255, 1),
+      inset 0 0 25px rgba(0, 170, 255, 0.4);
+  }
+  50% {
+    box-shadow: 
+      0 0 35px rgba(0, 170, 255, 1),
+      inset 0 0 35px rgba(0, 170, 255, 0.5);
+  }
+}
+
+.custom-storyline-container {
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: 2rem;
+}
+
+.custom-storyline-label {
+  display: block;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: #00aaff;
+  font-weight: 600;
+  font-family: 'Courier New', monospace;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 0 0 5px #00aaff;
+}
+
+.custom-storyline-input {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  background-color: #1a1a2e;
+  color: #00aaff;
+  border: 3px solid #00aaff;
+  border-radius: 0;
+  resize: vertical;
+  font-family: 'Courier New', monospace;
+  transition: all 0.3s ease;
+  box-shadow: 
+    0 0 10px rgba(0, 170, 255, 0.3),
+    inset 0 0 10px rgba(0, 170, 255, 0.1);
+}
+
+.custom-storyline-input:focus {
+  outline: none;
+  border-color: #00ccff;
+  box-shadow: 
+    0 0 20px rgba(0, 170, 255, 0.6),
+    inset 0 0 15px rgba(0, 170, 255, 0.2);
+}
+
+.custom-storyline-input::placeholder {
+  color: #0066aa;
+}
+
+.continue-button {
+  padding: 1rem 2.5rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  background-color: #00aaff;
+  color: #0a0a0a;
+  border: 3px solid #00aaff;
+  border-radius: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: fadeIn 0.5s ease, pixelPulse 1.5s ease-in-out infinite;
+  font-family: 'Courier New', monospace;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  box-shadow: 
+    0 0 30px rgba(0, 170, 255, 0.8),
+    inset 0 0 20px rgba(0, 170, 255, 0.3);
+}
+
+.continue-button:hover {
+  background-color: #00ccff;
+  border-color: #00ccff;
+  transform: translateY(-3px);
+  box-shadow: 
+    0 0 40px rgba(0, 204, 255, 1),
+    inset 0 0 30px rgba(0, 204, 255, 0.4);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
